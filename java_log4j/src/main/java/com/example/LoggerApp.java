@@ -12,15 +12,15 @@ public class LoggerApp {
         return;
     }
 
-    int num1 = Integer.parseInt(args[0]);
-    int num2 = Integer.parseInt(args[1]);
+    String num1 = args[0];
+    String num2 = args[1];
 
-    int result = addNumbers(num1, num2);
+    String result = addNumbers(num1, num2);
     logger.info("Result of addNumbers function: {}", result);
 
     logger.info("LoggerApp finished");
 }
-    public static int addNumbers(int a, int b) {
+    public static String addNumbers(String a, String b) {
         logger.info("addNumbers function called with arguments: {}, {}", a, b);
         return a + b;
 }}
