@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class LoggerApp {
     private static final Logger logger = LogManager.getLogger(LoggerApp.class);
-
+    private static final Logger userAgentLogger = LogManager.getLogger("UserAgentLogger");
     public static void main(String[] args) {
     if (args.length < 2) {
         System.out.println("Please provide two numbers as command line arguments.");
@@ -17,7 +17,9 @@ public class LoggerApp {
 
     String result = addNumbers(num1, num2);
     logger.info("Result of addNumbers function: {}", result);
-
+    // Get the user agent
+    String userAgent = System.getProperty("http.agent");
+    userAgentLogger.info("User Agent: {}", userAgent);
     logger.info("LoggerApp finished");
 }
     public static String addNumbers(String a, String b) {
